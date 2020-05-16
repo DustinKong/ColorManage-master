@@ -1,0 +1,3 @@
+<cu-custom bgColor="bg-blue" isBack="{{false}}">
+  <view slot="content">颜色测量</view>
+</cu-custom>

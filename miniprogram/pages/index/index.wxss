@@ -1,0 +1,24 @@
+.box{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+}
+.margin-top2{
+  margin-top: 20rpx;
+}
+.copytight{
+  font-size: 24rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+.posi{
+  position: fixed;
+  bottom:30rpx;
+  left: 150rpx;
+  
+}

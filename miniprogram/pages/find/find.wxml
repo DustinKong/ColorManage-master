@@ -1,0 +1,3 @@
+<cu-custom bgColor="bg-olive" isBack="{{false}}">
+  <view slot="content">仪器找色</view>
+</cu-custom>

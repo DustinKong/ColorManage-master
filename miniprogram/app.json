@@ -1,0 +1,66 @@
+{
+  "pages": [
+        "pages/color/color",
+    "pages/index/index",
+    "pages/login/login",
+
+    "pages/mycolor/mycolor",
+    "pages/find/find",
+    "pages/data/data",
+    "pages/me/me"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "谦会议",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "selectedColor": "#2db7f5",
+    "color": "#909090",
+    "list": [
+      {
+        "text": "颜色测量",
+        "iconPath": "images/01-off.png",
+        "selectedIconPath": "images/01-on.png",
+        "pagePath": "pages/color/color"
+      },
+      {
+        "text": "我的色彩",
+        "iconPath": "images/02-off.png",
+        "selectedIconPath": "images/02-on.png",
+        "pagePath": "pages/mycolor/mycolor"
+      },
+      {
+        "text": "仪器找色",
+        "iconPath": "images/03-off.png",
+        "selectedIconPath": "images/03-on.png",
+        "pagePath": "pages/find/find"
+      },
+      {
+        "text": "配方数据",
+        "iconPath": "images/04-off.png",
+        "selectedIconPath": "images/04-on.png",
+        "pagePath": "pages/data/data"
+      },
+      {
+        "text": "个人中心",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-select.png",
+        "pagePath": "pages/me/me"
+      }
+    ]
+  },
+  "plugins": {
+    "myPlugin": {
+      "version": "1.0.0",
+      "provider": "wx84472d5652384779"
+    }
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

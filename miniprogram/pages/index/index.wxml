@@ -1,0 +1,49 @@
+<cu-custom bgColor="bg-gradual-blue" isBack='{{false}}'>
+  <view slot="content">首页</view>
+</cu-custom>
+<view class="flex padding justify-center margin-top-xl">
+  <view class="cu-avatar round lg" style="background-image:url({{userInfo.avatarUrl}});">
+    <view class="cu-tag badge {{userInfo.gender%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}">
+    </view>
+  </view>
+</view>
+
+<view class="flex justify-center padding-bottom-xl">
+  <view class="cu-capsule radius padding-right">
+    <view class="cu-tag bg-blue">
+      <text>姓名</text>
+    </view>
+    <view class="cu-tag line-blue">
+      {{userName}}
+    </view>
+  </view>
+
+  <view class="cu-capsule radius">
+    <view class="cu-tag bg-cyan">
+      <text>手机号码</text>
+    </view>
+    <view class="cu-tag line-cyan">
+      {{userPhone}}
+    </view>
+  </view>
+</view>
+
+ <view class='nav-list margin-top-xl'>
+    <navigator open-type="navigate"  url="/pages/{{item.path}}/{{item.path}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}"  wx:key="key" >
+      <view class="nav-title margin">{{item.title}}</view>
+      <view class="nav-name margin">{{item.name}}</view>
+      <!-- <text class='cuIcon-{{item.icon}} margin'></text> -->
+    </navigator>
+  </view>
+      <view class="flex margin-top2">
+      <button class="cu-btn round flex-sub bg-yellow text-white padding margin-xs" bindtap="todetail">管理发布信息</button>
+      <button class="cu-btn round flex-sub bg-olive padding margin-xs" bindtap="tonote" data-target="Modal">管理优秀笔记</button>
+    </view>
+  <!-- <button class=" bg-olive" bindtap="todetail">管理发布信息</button>
+  <button class=" bg-yellow maggin-top" bindtap="todetail">管理发布信息</button> -->
+  <view class="padding flex flex-direction justify-between ">
+  <button class="cu-btn bg-red margin-tb-sm  round" bindtap="exit" data-target="Modal">退出登录</button>
+  <view class="text-center ">
+  <text class="text-lg">浙江工商大学 计科1602 邱思誉</text>
+</view>
+</view>

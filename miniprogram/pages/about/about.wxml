@@ -1,0 +1,29 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">我的信息</view>
+</cu-custom>
+	<view class="cu-form-group margin-top">
+		<view class="title">姓名</view>
+		<view class="title">{{userinfo}}</view>
+	</view>
+  	<view class="cu-form-group margin-top">
+		<view class="title">党员信息</view>
+		<view class="title text-bold">{{type}}</view>
+	</view>
+    	<view class="cu-form-group margin-top">
+		<view class="title">发布的笔记数量</view>
+		<view class="title">{{infoall[0].NoteNUm}}个</view>
+	</view>
+      	<view class="cu-form-group">
+		<view class="title">参与支部活动数量</view>
+		<view class="title">{{infoall[0].JoinActivityNum}}个</view>
+	</view>
+      	<view class="cu-form-group ">
+		<view class="title">志愿服务打卡个数</view>
+		<view class="title">{{infoall[0].JoinServiceNum}}个</view>
+	</view>
+        	<view class="cu-form-group ">
+		<view class="title">学习时长</view>
+		<view class="title">{{infoall[0].NoteNUm}}分钟</view>
+	</view>
+  

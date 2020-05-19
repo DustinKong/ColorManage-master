@@ -1,3 +1,102 @@
 <cu-custom bgColor="bg-blue" isBack="{{false}}">
   <view slot="content">颜色测量</view>
 </cu-custom>
+<view class="cu-bar bg-white solid-bottom padding-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-blue '></text>标量测量
+  </view>
+  <view class="bg-white buttons">
+    <button class="cu-btn round bg-blue text-center text-white  button-left" bindtap="measure">测量</button>
+    <button class="cu-btn round  text-center text-blue button-right" bindtap="save">保存</button>
+  </view>
+</view>
+<view class="bg-white">
+  <view class="flex bg-white margins">
+    <view class="flex-sub bg-blue text-center height ">角度</view>
+    <view class="flex-sub bg-blue text-center height">L*</view>
+    <view class="flex-sub bg-blue text-center height">a*</view>
+    <view class="flex-sub bg-blue text-center height ">b*</view>
+  </view>
+</view>
+
+<view class="bg-white" wx:for="{{messages}}">
+  <view class="flex bg-white margins">
+    <view class="flex-sub bg-white  text-center height2 ">{{item.rank}}</view>
+    <view class="flex-sub bg-white text-center height2">{{item.score}}</view>
+    <view class="flex-sub bg-white text-center height2">{{item.date}}</view>
+    <view class="flex-sub bg-white text-center height2 ">{{item.name}}</view>
+  </view>
+</view>
+
+<view class="cu-bar bg-white solid-bottom padding-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-blue '></text>试量测量
+  </view>
+  <view class="bg-white buttons">
+    <button class="cu-btn round bg-blue text-center text-white  button-left" bindtap="measure">测量</button>
+    <button class="cu-btn round  text-center text-blue button-right" bindtap="save">保存</button>
+  </view>
+</view>
+<view class="bg-white">
+  <view class="flex bg-white margins">
+    <view class="flex-sub bg-blue text-center height ">角度</view>
+    <view class="flex-sub bg-blue text-center height">L*</view>
+    <view class="flex-sub bg-blue text-center height">a*</view>
+    <view class="flex-sub bg-blue text-center height ">b*</view>
+  </view>
+</view>
+
+<view class="bg-white" wx:for="{{messages}}">
+  <view class="flex bg-white margins">
+    <view class="flex-sub bg-white  text-center height2 ">{{item.rank}}</view>
+    <input class="flex-sub bg-white text-center height2">{{item.score}}</input>
+    <input class="flex-sub bg-white text-center height2">{{item.date}}</input>
+    <input class="flex-sub bg-white text-center height2 ">{{item.name}}</input>
+  </view>
+</view>
+
+<view class="cu-bar bg-white solid-bottom padding-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-blue '></text>色差数据
+  </view>
+  <view class="bg-white buttons">
+    <view class='action text-lg'>
+      <text class='cuIcon-settings text-blue'></text> 数据显示参数设置
+    </view>
+    <!-- <button class="cu-btn round bg-blue text-center text-white " bindtap="measure">数据显示参数设置</button> -->
+  </view>
+</view>
+<view class="bg-white">
+  <view class="flex bg-white margins">
+    <view class="flex-sub bg-blue text-center height ">角度</view>
+    <view class="flex-sub bg-blue text-center height">dL*</view>
+    <view class="flex-sub bg-blue text-center height">da*</view>
+    <view class="flex-sub bg-blue text-center height ">db*</view>
+    <view class="flex-sub bg-blue text-center height ">dE*ab</view>
+  </view>
+</view>
+
+<view class="bg-white" wx:for="{{messages}}">
+  <view class="flex bg-white margins">
+    <view class="flex-sub bg-white  text-center height2 ">{{item.rank}}</view>
+    <view class="flex-sub bg-white text-center height2">{{item.score}}</view>
+    <view class="flex-sub bg-white text-center height2">{{item.date}}</view>
+    <view class="flex-sub bg-white text-center height2 ">{{item.name}}</view>
+    <view class="flex-sub bg-white text-center height2 ">{{item.name}}</view>
+  </view>
+</view>
+<view class="cu-bar bg-white solid-bottom padding-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-blue '></text>颜色对比
+  </view>
+</view>
+<view class="flex padding">
+  <view class="">
+    <view class="bk1"></view>
+    <view class="text-center text-bold">标样颜色</view>
+  </view>
+   <view class="">
+    <view class="bk2"></view>
+    <view class="text-center text-bold">试样颜色</view>
+  </view>
+</view>

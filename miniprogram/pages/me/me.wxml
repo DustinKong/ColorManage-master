@@ -22,21 +22,29 @@
 
 <view class="cu-list menu card-menu margin-top-lg radius">
 
-  <view class='cu-item animation-slide-right' style="animation-delay: 0.5s;">
+  <view class='cu-item ' >
     <view class='content' bindtap="showOurcode">
       <text class="cuIcon-appreciatefill text-red"></text>
-      <text class='text-gray text-xl'>联系我</text>
+      <text class='text-gray text-xl'>我的设备</text>
     </view>
   </view>
 
-  <view class='cu-item animation-slide-left' style="animation-delay: 0.5s;">
+  <view class='cu-item ' >
     <button class='cu-btn content' open-type="feedback">
       <text class="cuIcon-creativefill text-yellow"></text>
-      <text class='text-gray text-xl'>Bug提交</text>
+      <text class='text-gray text-xl'>配方中心</text>
+    </button>
+  </view>
+    <view class='cu-item ' >
+    <button class='cu-btn content' open-type="feedback">
+      <text class="cuIcon-creativefill text-yellow"></text>
+      <text class='text-gray text-xl'>关于</text>
+    </button>
+  </view>
+      <view class='cu-item ' >
+    <button class='cu-btn content' open-type="feedback">
+      <text class="cuIcon-creativefill text-yellow"></text>
+      <text class='text-gray text-xl'>用户反馈</text>
     </button>
   </view>
 </view>
-<view class="padding flex flex-direction justify-between ">
-  <button class="cu-btn bg-orange margin-tb-sm lg round" bindtap="exit" data-target="Modal">退出登录</button>
-</view>
-=

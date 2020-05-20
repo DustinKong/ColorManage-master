@@ -1,3 +1,60 @@
-<cu-custom bgColor="bg-orange" isBack="{{false}}">
+<cu-custom bgColor="bg-blue" isBack="{{false}}">
   <view slot="content">我的色彩</view>
 </cu-custom>
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-xl padding">
+    <text class="text-blue cuIcon-titles "></text>
+    <text class="text-blue text-bold">数据管理</text>
+    <text class="text-blue cuIcon-titles "></text>
+  </view>
+</view>
+<view class="flex">
+  <view>
+    <view class="flex">
+      <view class="padding text-blue text-bold">名称</view>
+      <input placeholder="请输入数据名称" class="margin-sm"></input>
+      <text class="text-black cuIcon-roundclosefill padding "></text>
+    </view>
+    <view class="flex">
+      <view class="padding text-blue text-bold">时间</view>
+      <input placeholder="全部时间" class="margin-sm"></input>
+      <text class="text-black cuIcon-roundclosefill padding "></text>
+    </view>
+  </view>
+  <image src="/images/find.png" class="find"></image>
+</view>
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-xl padding">
+    <text class="text-blue cuIcon-titles "></text>
+    <text class="text-blue text-bold">全部数据</text>
+    <text class="text-blue cuIcon-titles "></text>
+  </view>
+</view>
+
+<view class="bg-white">
+  <view class="flex bg-white margins">
+    <view class="flex-sub bg-blue text-center height ">序号</view>
+    <view class="flex-sub bg-blue text-center height">仿真色</view>
+    <view class="flex-sub bg-blue text-center height">名称</view>
+    <view class="flex-sub bg-blue text-center height ">时间</view>
+    <view class="flex-sub bg-blue text-center height ">详情</view>
+  </view>
+</view>
+
+<view class="bg-white" wx:for="{{messages}}">
+  <view class="flex bg-white margins">
+    <view class="flex-sub bg-white  text-center height2 ">{{item.rank}}</view>
+    <view class="flex-sub bg-white text-center height2">{{item.score}}</view>
+    <view class="flex-sub bg-white text-center height2">{{item.date}}</view>
+    <view class="flex-sub bg-white text-center height2 ">{{item.name}}</view>
+    <view class="flex-sub bg-white text-blue text-center height2 ">详情</view>
+  </view>
+</view>
+<view class="flex margin-top">
+  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="commit">选中数据作为标样</button>
+  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="finish" data-target="Modal">选中数据开始找色</button>
+  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="finish" data-target="Modal">删除选中数据</button>
+</view>
+<view class="padding flex flex-direction justify-between ">
+  <button class="cu-btn bg-blue lg round">删除选中数据</button>
+</view>

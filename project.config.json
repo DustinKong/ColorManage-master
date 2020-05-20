@@ -50,37 +50,9 @@
 			"current": -1,
 			"list": [
 				{
-					"id": 0,
-					"name": "管理员页面index",
-					"pathName": "pages/index/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "register",
-					"pathName": "pages/register/register",
-					"query": "",
-					"scene": null
-				},
-				{
 					"id": -1,
 					"name": "me",
 					"pathName": "pages/me/me",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "about",
-					"pathName": "pages/about/about",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "order",
-					"pathName": "pages/order/order",
 					"query": "",
 					"scene": null
 				},
@@ -107,29 +79,21 @@
 				},
 				{
 					"id": -1,
-					"name": "发布",
-					"pathName": "pages/form/form",
+					"name": "mycolor",
+					"pathName": "pages/mycolor/mycolor",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "find",
+					"pathName": "pages/find/find",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "act3",
-					"pathName": "pages/act3/act3",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/act1/act1",
-					"pathName": "pages/act1/act1",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 11,
-					"name": "join4",
-					"pathName": "pages/join4/join4",
+					"name": "data",
+					"pathName": "pages/data/data",
 					"query": "",
 					"scene": null
 				}

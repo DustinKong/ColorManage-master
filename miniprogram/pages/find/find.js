@@ -5,7 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    messages: [{
+      'union': 'XXX',
+      'rank': '15°',
+      'score': 80,
+      'date': '2020/3/31',
+      'name': ''
+    },
+    {
+      'union': 'XXX',
+      'rank': '45°',
+      'score': 80,
+      'date': '2020/3/31',
+      'name': ''
+    },
+    {
+      'union': 'XXX',
+      'rank': '110°',
+      'score': 80,
+      'date': '2020/3/31',
+      'name': ''
+    }
+    ]
   },
 
   /**

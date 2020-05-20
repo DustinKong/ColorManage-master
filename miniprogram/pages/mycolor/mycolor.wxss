@@ -1,1 +1,22 @@
-/* pages/mycolor/mycolor.wxss */
+
+.height {
+  height: 50rpx;
+  margin: 3rpx;
+  font-size: 32rpx;
+}
+
+.height2 {
+  height: 80rpx;
+  margin: 3rpx;
+  font-size: 32rpx;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 15rpx;
+}
+.find{
+  left: 50rpx;
+  top: 45rpx;
+  height: 100rpx;
+  width: 100rpx;
+}

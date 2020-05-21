@@ -1,18 +1,19 @@
-<view class="container">
+<!-- <view class="container">
   <view class="start-container">
-    <button class="lg"  open-type="getUserInfo" bindgetuserinfo="onGetOpenid">获取微信授权</button>
+    <button class="lg" bindtap="onGetOpenid">获取微信授权</button>
+  </view>
+</view> -->
+<!-- start.wxml -->
+<view class="container">
+  <image class="logo" src="/images/icon.png"></image>
+  <text class="userName">颜色君</text>
+  <text class="userName2">做实验 越开心</text>
+  <view class="start-container">
+    <button class="lg" disabled="{{!isagree}}"  open-type="getUserInfo" bindgetuserinfo='onGetOpenid'>微信登录</button>
+  </view>
+  <view class="text-center bottom">
+    <checkbox checked="{{isagree}}"bindtap="isagree" class="blue checkicon"></checkbox>
+    <text class="text-grey">我已阅读并同意</text>
+    <text class="text-blue">《颜色君申明》</text>
   </view>
 </view>
-
-  <!-- <view class="userinfo">
-    <button 
-      open-type="getUserInfo" 
-      bindgetuserinfo="onGetUserInfo"
-      class="userinfo-avatar"
-      style="background-image: url({{avatarUrl}})"
-      size="default"
-    ></button>
-    <view class="userinfo-nickname-wrapper">
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
-    </view>
-  </view> -->

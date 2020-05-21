@@ -1,1 +1,24 @@
-/* pages/data/data.wxss */
+.width{
+  width: 50%;
+}
+.margins {
+  position: relative;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  top: 10rpx;
+}
+.height {
+  height: 55rpx;
+  margin: 3rpx;
+  font-size: 32rpx;
+}
+
+.height2 {
+  height: 60rpx;
+  margin: 3rpx;
+  font-size: 32rpx;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 15rpx;
+}

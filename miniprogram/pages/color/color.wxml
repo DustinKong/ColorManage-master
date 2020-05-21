@@ -37,6 +37,10 @@
     <button class="cu-btn round  text-center text-blue button-right" bindtap="save">保存</button>
   </view>
 </view>
+	<view class="cu-form-group">
+		<view class="title" >颜色名称</view>
+		<input placeholder="请输入颜色名称" bindinput="getname"></input>
+	</view>
 <view class="bg-white">
   <view class="flex bg-white margins">
     <view class="flex-sub bg-blue text-center height ">角度</view>
@@ -49,9 +53,9 @@
 <view class="bg-white" wx:for="{{messages}}">
   <view class="flex bg-white margins">
     <view class="flex-sub bg-white  text-center height2 ">{{item.rank}}</view>
-    <input class="flex-sub bg-white text-center height2">{{item.score}}</input>
-    <input class="flex-sub bg-white text-center height2">{{item.date}}</input>
-    <input class="flex-sub bg-white text-center height2 ">{{item.name}}</input>
+    <input type="number" class="flex-sub bg-white text-center height2" data-id='{{index}}' bindinput="getnum1">{{item.score}}</input>
+    <input type="number" class="flex-sub bg-white text-center height2" data-id='{{index}}' bindinput="getnum2">{{item.date}}</input>
+    <input type="number" class="flex-sub bg-white text-center height2 "data-id='{{index}}' bindinput="getnum3">{{item.name}}</input> 
   </view>
 </view>
 
@@ -76,12 +80,12 @@
   </view>
 </view>
 
-<view class="bg-white" wx:for="{{messages}}">
+<view class="bg-white" wx:for="{{colorlist}}">
   <view class="flex bg-white margins">
     <view class="flex-sub bg-white  text-center height2 ">{{item.rank}}</view>
-    <view class="flex-sub bg-white text-center height2">{{item.score}}</view>
-    <view class="flex-sub bg-white text-center height2">{{item.date}}</view>
-    <view class="flex-sub bg-white text-center height2 ">{{item.name}}</view>
+    <view class="flex-sub bg-white text-center height2">{{item.first}}</view>
+    <view class="flex-sub bg-white text-center height2">{{item.second}}</view>
+    <view class="flex-sub bg-white text-center height2 ">{{item.third}}</view>
     <view class="flex-sub bg-white text-center height2 ">{{item.name}}</view>
   </view>
 </view>
@@ -95,7 +99,7 @@
     <view class="bk1"></view>
     <view class="text-center text-bold">标样颜色</view>
   </view>
-   <view class="">
+  <view class="">
     <view class="bk2"></view>
     <view class="text-center text-bold">试样颜色</view>
   </view>

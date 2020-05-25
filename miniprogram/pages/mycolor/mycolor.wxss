@@ -9,6 +9,7 @@
   height: 80rpx;
   margin: 3rpx;
   font-size: 32rpx;
+
   align-items: center;
   justify-content: center;
   position: relative;

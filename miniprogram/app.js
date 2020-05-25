@@ -36,7 +36,7 @@ App({
         } else {
           // 未授权，跳转到授权页面
           console.log('no')
-          wx.switchTab({
+          wx.navigateTo({
             url: '/pages/login/login',
           })
         }
@@ -49,6 +49,8 @@ App({
     username:'',
     startTimeText: '',
     endTimeText: '',
-    room: ''
+    room: '',
+    chooseid:'',
+    chooseidtofind:''
   }
 })

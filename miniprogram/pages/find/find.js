@@ -1,4 +1,6 @@
-// pages/find/find.js
+const db = wx.cloud.database();
+const app = getApp();
+const list = db.collection('colorlist');
 Page({
 
   /**
@@ -33,7 +35,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log('chooseidtofind', app.globalData.chooseidtofind)
   },
 
   /**

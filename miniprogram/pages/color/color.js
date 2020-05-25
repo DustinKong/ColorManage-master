@@ -1,11 +1,10 @@
-// pages/color/color.js
+const db = wx.cloud.database();
+const app = getApp();
+const list = db.collection('colorlist');
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     name: '',
+    colorpart1:[],
     colorlist: [{
       'first': 0,
       'second': 0,
@@ -20,54 +19,90 @@ Page({
       'first': 0,
       'second': 0,
       'third': 0,
-      'rank': '1',
+      'rank': '110',
     }, ],
-    messages: [{
-        'union': 'XXX',
-        'rank': '15°',
-        'score': 62.55,
-        'date': 6.66,
-        'name': 3.47
-      },
-      {
-        'union': 'XXX',
-        'rank': '45°',
-        'score': 64.58,
-        'date': 4.11,
-        'name': 1.56
-      },
-      {
-        'union': 'XXX',
-        'rank': '110°',
-        'score': 66.98,
-        'date': 3.33,
-        'name': 7.64
-      }
-    ]
+    // messages: [{
+    //     'union': 'XXX',
+    //     'rank': '15°',
+    //     'score': 62.55,
+    //     'date': 6.66,
+    //     'name': 3.47
+    //   },
+    //   {
+    //     'union': 'XXX',
+    //     'rank': '45°',
+    //     'score': 64.58,
+    //     'date': 4.11,
+    //     'name': 1.56
+    //   },
+    //   {
+    //     'union': 'XXX',
+    //     'rank': '110°',
+    //     'score': 66.98,
+    //     'date': 3.33,
+    //     'name': 7.64
+    //   }
+    // ]
   },
-  save(){
-    var that=this
-    var userid=wx.getStorageSync('userinfo')
-    console.log('userid',userid)
+  save() {
+    var that = this
+    var userid = wx.getStorageSync('userinfo')
+    console.log('userid', userid)
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    // console.log("当前时间戳为：" + timestamp);
+    var n = timestamp * 1000;
+    var date = new Date(n);
+    //年  
+    var Y = date.getFullYear();
+    //月  
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    //日  
+    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    //时  
+    var nowtime = Y + '-' + M + '-' + D
+    var entity = {}
+    entity.color = that.data.colorlist
+    entity.name = that.data.name
+    entity.time = nowtime
     wx.cloud.callFunction({
       name: 'uploadmycolor',
       data: {
-        color: that.data.colorlist ,
-        id: userid
-      }, success: function (res) {
+        id: userid,
+        obj: entity
+      },
+      success: function (res) {
         console.log(res)
         wx.showToast({
           title: '提交成功',
           duration: 2000,
           // success: function () {
-            // setTimeout(function () {
-            //   wx.switchTab({
-            //     url: '/pages/index/index',
-            //   })
-            // }, 2000);
+          // setTimeout(function () {
+          //   wx.switchTab({
+          //     url: '/pages/index/index',
+          //   })
+          // }, 2000);
           // }
         })
-      }, fail: function (res) {
+      },
+      fail: function (res) {
+        console.log(res)
+      }
+    })
+
+    wx.cloud.callFunction({
+      name: 'uploadAllColor',
+      data: {
+        id: userid,
+        name: that.data.name,
+        color: that.data.colorlist,
+        date: nowtime
+      },
+      success: function (res) {
+        console.log(res)
+
+      },
+      fail: function (res) {
         console.log(res)
       }
     })
@@ -122,56 +157,65 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-
+  onLoad: function (options) {
+    var that=this
+    console.log('chooseid', app.globalData.chooseid)
+    list.doc(app.globalData.chooseid).get({
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          colorpart1: res.data
+        })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

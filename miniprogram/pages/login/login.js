@@ -100,7 +100,7 @@ Page({
           }
         })
         wx.switchTab({
-          url: '/pages/index/index',
+          url: '/pages/color/color',
         })
       },
       fail: err => {

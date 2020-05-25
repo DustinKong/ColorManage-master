@@ -38,23 +38,26 @@
     <view class="flex-sub bg-blue text-center height">名称</view>
     <view class="flex-sub bg-blue text-center height ">时间</view>
     <view class="flex-sub bg-blue text-center height ">详情</view>
+    <view class="flex-sub bg-blue text-center height ">选择</view>
   </view>
 </view>
 
-<view class="bg-white" wx:for="{{messages}}">
+<view class="bg-white" wx:for="{{colorlist}}">
   <view class="flex bg-white margins">
-    <view class="flex-sub bg-white  text-center height2 ">{{item.rank}}</view>
-    <view class="flex-sub bg-white text-center height2">{{item.score}}</view>
-    <view class="flex-sub bg-white text-center height2">{{item.date}}</view>
-    <view class="flex-sub bg-white text-center height2 ">{{item.name}}</view>
+    <view class="flex-sub bg-white  text-center height2 ">{{index}}</view>
+    <!-- <view class="flex-sub bg-white text-center height2">{{item.score}}</view> -->
+    <image style="background-color:purple; height:50rpx;width:50rpx;border-radius:50%; top:10rpx;"></image>
+    <view class="flex-sub bg-white text-center height2">{{item.name}}</view>
+    <view class="flex-sub bg-white text-center height2 ">{{item.date}}</view>
     <view class="flex-sub bg-white text-blue text-center height2 ">详情</view>
+    <radio class="flex-sub" value="{{item.name}}" checked="{{item.checked}}" bindtap="radioChange" value='{{index}}' data-id="{{index}}" data-_id="{{item._id}}"></radio>
   </view>
 </view>
 <view class="flex margin-top">
-  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="commit">选中数据作为标样</button>
-  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="finish" data-target="Modal">选中数据开始找色</button>
-  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="finish" data-target="Modal">删除选中数据</button>
+  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="choose1">选中数据作为标样</button>
+  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="choose2" data-target="Modal">选中数据开始找色</button>
+  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="choose3" data-target="Modal">删除选中数据</button>
 </view>
 <view class="padding flex flex-direction justify-between ">
-  <button class="cu-btn bg-blue lg round">删除选中数据</button>
+  <button class="cu-btn bg-blue lg round">获取仪器数据</button>
 </view>

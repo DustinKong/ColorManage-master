@@ -29,10 +29,10 @@
     </view>
   </view>
 
-  <view class='cu-item ' >
+  <view class='cu-item ' bindtap="tocenter">
     <button class='cu-btn content' open-type="feedback">
       <text class="cuIcon-creativefill text-yellow"></text>
-      <text class='text-gray text-xl'>配方中心</text>
+      <text class='text-gray text-xl'>我的配方</text>
     </button>
   </view>
     <view class='cu-item ' >

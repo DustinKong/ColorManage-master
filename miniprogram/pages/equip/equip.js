@@ -1,18 +1,30 @@
-// pages/equip/equip.js
+const db = wx.cloud.database();
+const app = getApp();
+const list = db.collection('userlist');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    info:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that=this
+    list.where({
+      _openid:wx.getStorageSync('userinfo')
+    }).get({
+      success:function(res){
+        console.log(res)
+        that.setData({
+          info:res.data
+        })
+      }}
+    )
   },
 
   /**

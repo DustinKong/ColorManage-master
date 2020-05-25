@@ -85,6 +85,7 @@
 					"id": -1,
 					"name": "mycolor",
 					"pathName": "pages/mycolor/mycolor",
+					"query": "",
 					"scene": null
 				},
 				{
@@ -99,6 +100,12 @@
 					"name": "data",
 					"pathName": "pages/data/data",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/equip/equip",
+					"pathName": "pages/equip/equip",
 					"scene": null
 				}
 			]

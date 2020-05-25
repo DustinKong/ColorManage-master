@@ -1,1 +1,5 @@
-/* pages/equip/equip.wxss */
+.name{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}

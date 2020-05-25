@@ -7,7 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    name:'',
+    time:'',
     colorpart1:[],
+    foundcolor:[],
     colorlist: [],
     chooseindex: 0,
     messages: [{
@@ -81,7 +84,53 @@ Page({
       }
     })
   },
-
+  getname(e){
+    this.setData({
+      name:e.detail.value
+    })
+  },
+  gettime(e){
+    this.setData({
+      time:e.detail.value
+    })
+  },
+  search(){
+    wx.showLoading({
+      title: '加载中...',
+      mask: true //显示触摸蒙层  防止事件穿透触发
+    });
+    var that=this
+    wx.cloud.callFunction({
+      name: 'searchcolor',
+      data: {
+        word:that.data.name
+      },
+      success: function (res) {
+        console.log(res)
+        wx.hideLoading()
+        if (res.result.data.length) {
+          wx.showToast({
+            title: '找到数据！',
+            duration: 1000,
+          })
+          that.setData({
+            colorlist: res.result.data
+          })
+        } else {
+          wx.showToast({
+            title: '未找到数据！',
+            duration: 1000,
+          })
+          that.setData({
+            colorlist: []
+          })
+        }
+      },
+      fail: function (res) {
+        console.log(res)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

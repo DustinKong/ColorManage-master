@@ -19,21 +19,34 @@
   </view>
 </view>
 
-<view class="bg-white" wx:for="{{messages}}">
-  <view class="flex bg-white margins">
-    <view class="flex-sub bg-white  text-center height2 ">{{item.rank}}</view>
-    <view class="flex-sub bg-white text-center height2">{{item.score}}</view>
-    <view class="flex-sub bg-white text-center height2">{{item.date}}</view>
-    <view class="flex-sub bg-white text-center height2 ">{{item.name}}</view>
-  </view>
-</view>
+<block wx:if="{{colorlist.length}}">
+	<view class="bg-white" wx:for="{{colorlist.color}}">
+		<view class="flex bg-white margins">
+			<view class="flex-sub bg-white  text-center height2 ">{{item.rank}}</view>
+			<view class="flex-sub bg-white text-center height2">{{item.first}}</view>
+			<view class="flex-sub bg-white text-center height2">{{item.second}}</view>
+			<view class="flex-sub bg-white text-center height2 ">{{item.third}}</view>
+		</view>
+	</view>
+</block>
+<block wx:else>
+	<view class="bg-white" wx:for="{{messages}}">
+		<view class="flex bg-white margins">
+			<view class="flex-sub bg-white  text-center height2 ">{{item.rank}}</view>
+			<view class="flex-sub bg-white text-center height2">{{item.first}}</view>
+			<view class="flex-sub bg-white text-center height2">{{item.second}}</view>
+			<view class="flex-sub bg-white text-center height2 ">{{item.third}}</view>
+		</view>
+	</view>
+</block>
+
 <view class="flex margin-top">
-  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="commit">颜色数据</button>
-  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="finish" data-target="Modal">色彩仿真</button>
+  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="">颜色数据</button>
+  <button class="cu-btn round flex-sub bg-blue padding margin-xs" bindtap="" data-target="Modal">色彩仿真</button>
 
 </view>
 <view class="padding flex flex-direction justify-between ">
-  <button class="cuIcon-search cu-btn bg-blue lg round">开始查找配方</button>
+  <button class="cuIcon-search cu-btn bg-blue lg round" bindtap="findcolor">开始查找配方</button>
 </view>
 <view class="flex-sub text-center padding-top">
   <view class="solid-bottom text-xl padding-sm bg-grey">
@@ -50,3 +63,13 @@
     <view class="flex-sub bg-blue text-center height ">详情</view>
   </view>
 </view>
+
+	<view class="bg-white" wx:for="{{foundcolor}}">
+		<view class="flex bg-white margins">
+			<view class="flex-sub bg-white  text-center height2 ">{{index}}</view>
+			<view class="flex-sub bg-white  text-center height2 ">{{item.band}}</view>
+			<view class="flex-sub bg-white text-center height2">{{item.colornum}}</view>
+			<view class="flex-sub bg-white text-center height2">{{item.rank}}</view>
+			<view class="flex-sub bg-white text-center height2 text-blue">详情</view>
+		</view>
+	</view>

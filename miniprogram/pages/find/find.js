@@ -7,35 +7,79 @@ Page({
    * 页面的初始数据
    */
   data: {
+    colorlist: [],
+    foundcolor: [],
     messages: [{
-      'union': 'XXX',
-      'rank': '15°',
-      'score': 80,
-      'date': '2020/3/31',
-      'name': ''
-    },
-    {
-      'union': 'XXX',
-      'rank': '45°',
-      'score': 80,
-      'date': '2020/3/31',
-      'name': ''
-    },
-    {
-      'union': 'XXX',
-      'rank': '110°',
-      'score': 80,
-      'date': '2020/3/31',
-      'name': ''
-    }
+        'union': 'XXX',
+        'rank': '15°',
+        'score': 80,
+        'date': '2020/3/31',
+        'name': ''
+      },
+      {
+        'union': 'XXX',
+        'rank': '45°',
+        'score': 80,
+        'date': '2020/3/31',
+        'name': ''
+      },
+      {
+        'union': 'XXX',
+        'rank': '110°',
+        'score': 80,
+        'date': '2020/3/31',
+        'name': ''
+      }
     ]
   },
 
+  findcolor(e) {
+    var that = this
+    wx.showLoading({
+      title: '加载中...',
+      mask: true //显示触摸蒙层  防止事件穿透触发
+    });
+    wx.cloud.callFunction({
+      name: 'findrecipe',
+      data: {
+        id: that.data.colorlist._id
+      },
+      success: function (res) {
+        wx.hideLoading()
+        console.log(res)
+        if (res.result.data.length) {
+          wx.showToast({
+            title: '找到数据！',
+            duration: 1000,
+          })
+          that.setData({
+            foundcolor: res.result.data
+          })
+        } else {
+          wx.showToast({
+            title: '未找到数据！',
+            duration: 1000,
+          })
+        }
+      },
+      fail: function (res) {
+        console.log(res)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
     console.log('chooseidtofind', app.globalData.chooseidtofind)
+    list.doc(app.globalData.chooseidtofind).get({
+      success: function (res) {
+        that.setData({
+          colorlist: res.data
+        })
+      }
+    })
   },
 
   /**

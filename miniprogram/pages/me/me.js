@@ -18,9 +18,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) { //通过openid获取到数据库中的用户信息
-    var t = wx.getStorageSync('user')
+    var t = wx.getStorageSync('userInfo')
     this.setData({
-      avatarUrl: t.avatarUrl
+      avatarUrl: t.avatarUrl,
+      nickname:t.nickName
     })
 
     // db.collection('userInfo').where({

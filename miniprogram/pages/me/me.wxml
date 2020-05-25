@@ -2,7 +2,7 @@
   <view slot="content">个人中心</view>
 </cu-custom>
 
-<view class="flex solid-bottom padding align-center bg-white margin radius" bindtap="goAbout">
+<view class="flex solid-bottom padding align-center bg-white margin radius" >
   <view class="cu-avatar round xl" style="background-image:url({{avatarUrl}});"></view>
   <!-- 头像框 -->
   <view class="flex-right padding-bottom margin-top-xs">
@@ -10,7 +10,7 @@
       <text class="txt text-xl">{{nickName}}</text>
     </view>
     <view class="margin-left-xl margin-top-xs">
-      <text class="text-lg text-black text-bold">我的信息</text>
+      <text class="text-lg text-black text-bold">{{nickname}}</text>
     </view>
     <!-- 文本框 -->
   </view>

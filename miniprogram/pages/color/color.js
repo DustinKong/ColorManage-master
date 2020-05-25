@@ -4,7 +4,7 @@ const list = db.collection('colorlist');
 Page({
   data: {
     name: '',
-    colorpart1:[],
+    colorpart1: [],
     colorlist: [{
       'first': 0,
       'second': 0,
@@ -46,66 +46,74 @@ Page({
   },
   save() {
     var that = this
-    var userid = wx.getStorageSync('userinfo')
-    console.log('userid', userid)
-    var timestamp = Date.parse(new Date());
-    timestamp = timestamp / 1000;
-    // console.log("当前时间戳为：" + timestamp);
-    var n = timestamp * 1000;
-    var date = new Date(n);
-    //年  
-    var Y = date.getFullYear();
-    //月  
-    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
-    //日  
-    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-    //时  
-    var nowtime = Y + '-' + M + '-' + D
-    var entity = {}
-    entity.color = that.data.colorlist
-    entity.name = that.data.name
-    entity.time = nowtime
-    wx.cloud.callFunction({
-      name: 'uploadmycolor',
-      data: {
-        id: userid,
-        obj: entity
-      },
-      success: function (res) {
-        console.log(res)
-        wx.showToast({
-          title: '提交成功',
-          duration: 2000,
-          // success: function () {
-          // setTimeout(function () {
-          //   wx.switchTab({
-          //     url: '/pages/index/index',
-          //   })
-          // }, 2000);
-          // }
-        })
-      },
-      fail: function (res) {
-        console.log(res)
-      }
-    })
+    if (!that.data.name)
+      wx.showToast({
+        title: '请填写颜色名称！',
+        duration: 2000,
+      })
+    else {
 
-    wx.cloud.callFunction({
-      name: 'uploadAllColor',
-      data: {
-        id: userid,
-        name: that.data.name,
-        color: that.data.colorlist,
-        date: nowtime
-      },
-      success: function (res) {
-        console.log(res)
+      var userid = wx.getStorageSync('userinfo')
+      console.log('userid', userid)
+      var timestamp = Date.parse(new Date());
+      timestamp = timestamp / 1000;
+      // console.log("当前时间戳为：" + timestamp);
+      var n = timestamp * 1000;
+      var date = new Date(n);
+      //年  
+      var Y = date.getFullYear();
+      //月  
+      var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+      //日  
+      var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+      //时  
+      var nowtime = Y + '-' + M + '-' + D
+      var entity = {}
+      entity.color = that.data.colorlist
+      entity.name = that.data.name
+      entity.time = nowtime
+      wx.cloud.callFunction({
+        name: 'uploadmycolor',
+        data: {
+          id: userid,
+          obj: entity
+        },
+        success: function (res) {
+          console.log(res)
+          wx.showToast({
+            title: '提交成功',
+            duration: 2000,
+            // success: function () {
+            // setTimeout(function () {
+            //   wx.switchTab({
+            //     url: '/pages/index/index',
+            //   })
+            // }, 2000);
+            // }
+          })
+        },
+        fail: function (res) {
+          console.log(res)
+        }
+      })
 
-      },
-      fail: function (res) {
-        console.log(res)
-      }
-    })
+      wx.cloud.callFunction({
+        name: 'uploadAllColor',
+        data: {
+          id: userid,
+          name: that.data.name,
+          color: that.data.colorlist,
+          date: nowtime
+        },
+        success: function (res) {
+          console.log(res)
+
+        },
+        fail: function (res) {
+          console.log(res)
+        }
+      })
+    }
   },
   getname(e) {
     this.setData({
@@ -158,7 +166,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this
+    var that = this
     console.log('chooseid', app.globalData.chooseid)
     list.doc(app.globalData.chooseid).get({
       success: function (res) {

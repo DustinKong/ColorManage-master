@@ -12,16 +12,16 @@
   <view>
     <view class="flex">
       <view class="padding text-blue text-bold">名称</view>
-      <input placeholder="请输入数据名称" class="margin-sm"></input>
+      <input placeholder="请输入数据名称" class="margin-sm" bindinput="getname"></input>
       <text class="text-black cuIcon-roundclosefill padding "></text>
     </view>
     <view class="flex">
       <view class="padding text-blue text-bold">时间</view>
-      <input placeholder="全部时间" class="margin-sm"></input>
+      <input placeholder="全部时间" class="margin-sm" bindinput="gettime"></input>
       <text class="text-black cuIcon-roundclosefill padding "></text>
     </view>
   </view>
-  <image src="/images/find.png" class="find"></image>
+  <image src="/images/find.png" class="find" bindtap="search"></image>
 </view>
 <view class="flex-sub text-center">
   <view class="solid-bottom text-xl padding">
@@ -46,11 +46,11 @@
   <view class="flex bg-white margins">
     <view class="flex-sub bg-white  text-center height2 ">{{index}}</view>
     <!-- <view class="flex-sub bg-white text-center height2">{{item.score}}</view> -->
-    <image style="background-color:purple; height:50rpx;width:50rpx;border-radius:50%; top:10rpx;"></image>
+    <image style="background-color:purple; height:60rpx;width:60rpx;border-radius:50%; top:10rpx;" class="" ></image>
     <view class="flex-sub bg-white text-center height2">{{item.name}}</view>
     <view class="flex-sub bg-white text-center height2 ">{{item.date}}</view>
     <view class="flex-sub bg-white text-blue text-center height2 ">详情</view>
-    <radio class="flex-sub" value="{{item.name}}" checked="{{item.checked}}" bindtap="radioChange" value='{{index}}' data-id="{{index}}" data-_id="{{item._id}}"></radio>
+    <radio class="flex-sub" style="top:20rpx;" value="{{item.name}}" checked="{{item.checked}}" bindtap="radioChange" value='{{index}}' data-id="{{index}}" data-_id="{{item._id}}"></radio>
   </view>
 </view>
 <view class="flex margin-top">

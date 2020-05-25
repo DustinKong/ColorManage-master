@@ -44,6 +44,15 @@ Page({
     //   }
     // ]
   },
+  getRandomColor() {
+    let rgb = []
+    for (let i = 0; i < 3; ++i) {
+      let color = Math.floor(Math.random() * 256).toString(16)
+      color = (color.length == 1) ? '0' + color : color
+      rgb.push(color)
+    }
+    return '#' + rgb.join('')
+  },
   save() {
     var that = this
     if (!that.data.name)
@@ -52,7 +61,10 @@ Page({
         duration: 2000,
       })
     else {
-
+      wx.showLoading({
+        title: '加载中...',
+        mask: true //显示触摸蒙层  防止事件穿透触发
+      });
       var userid = wx.getStorageSync('userinfo')
       console.log('userid', userid)
       var timestamp = Date.parse(new Date());
@@ -72,6 +84,7 @@ Page({
       entity.color = that.data.colorlist
       entity.name = that.data.name
       entity.time = nowtime
+      entity.colornum=this.getRandomColor()
       wx.cloud.callFunction({
         name: 'uploadmycolor',
         data: {
@@ -79,6 +92,7 @@ Page({
           obj: entity
         },
         success: function (res) {
+          wx.hideLoading()
           console.log(res)
           wx.showToast({
             title: '提交成功',
@@ -94,7 +108,7 @@ Page({
         },
         fail: function (res) {
           console.log(res)
-        }
+        },
       })
 
       wx.cloud.callFunction({
@@ -103,7 +117,8 @@ Page({
           id: userid,
           name: that.data.name,
           color: that.data.colorlist,
-          date: nowtime
+          date: nowtime,
+          colornum:this.getRandomColor()
         },
         success: function (res) {
           console.log(res)
@@ -175,6 +190,12 @@ Page({
           colorpart1: res.data
         })
       }
+    })
+    var t1=this.getRandomColor()
+    var t2=this.getRandomColor()
+    this.setData({
+      bk1:t1,
+      bk2:t2
     })
   },
 

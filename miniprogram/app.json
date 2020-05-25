@@ -3,6 +3,7 @@
     "pages/color/color",
     "pages/index/index",
     "pages/login/login",
+    "pages/equip/equip",
 
     "pages/mycolor/mycolor",
     "pages/find/find",

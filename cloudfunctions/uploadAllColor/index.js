@@ -13,7 +13,8 @@ exports.main = async (event, context) => {
         userid:event.id,
         name:event.name,
         date:event.date,
-        color:event.color
+        color:event.color,
+        colornum:event.colornum
       }
     })
   } catch (e) {

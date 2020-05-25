@@ -10,27 +10,21 @@ Page({
     colorlist: [],
     foundcolor: [],
     messages: [{
-        'union': 'XXX',
-        'rank': '15°',
-        'score': 80,
-        'date': '2020/3/31',
-        'name': ''
-      },
-      {
-        'union': 'XXX',
-        'rank': '45°',
-        'score': 80,
-        'date': '2020/3/31',
-        'name': ''
-      },
-      {
-        'union': 'XXX',
-        'rank': '110°',
-        'score': 80,
-        'date': '2020/3/31',
-        'name': ''
-      }
-    ]
+      'first': 0,
+      'second': 0,
+      'third': 0,
+      'rank': '15',
+    }, {
+      'first': 0,
+      'second': 0,
+      'third': 0,
+      'rank': '45',
+    }, {
+      'first': 0,
+      'second': 0,
+      'third': 0,
+      'rank': '110',
+    }]
   },
 
   findcolor(e) {
@@ -75,6 +69,7 @@ Page({
     console.log('chooseidtofind', app.globalData.chooseidtofind)
     list.doc(app.globalData.chooseidtofind).get({
       success: function (res) {
+        console.log(res)
         that.setData({
           colorlist: res.data
         })

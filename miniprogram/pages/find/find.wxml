@@ -19,7 +19,7 @@
   </view>
 </view>
 
-<block wx:if="{{colorlist.length}}">
+<block wx:if="{{colorlist}}">
 	<view class="bg-white" wx:for="{{colorlist.color}}">
 		<view class="flex bg-white margins">
 			<view class="flex-sub bg-white  text-center height2 ">{{item.rank}}</view>

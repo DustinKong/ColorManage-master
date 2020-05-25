@@ -117,11 +117,11 @@
 </view>
 <view class="flex padding">
 	<view class="">
-		<view class="bk1"></view>
+		<view class="bk1" style="background-color:{{bk1}}"></view>
 		<view class="text-center text-bold">标样颜色</view>
 	</view>
 	<view class="">
-		<view class="bk2"></view>
+		<view class="bk2" style="background-color:{{bk2}}"></view>
 		<view class="text-center text-bold">试样颜色</view>
 	</view>
 </view>

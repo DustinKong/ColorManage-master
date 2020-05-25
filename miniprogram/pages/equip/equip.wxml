@@ -1,0 +1,5 @@
+<cu-custom bgColor="bg-blue" isBack="{{false}}">
+  <view slot="content">我的配方</view>
+</cu-custom><cu-custom bgColor="bg-blue" isBack="{{false}}">
+  <view slot="content">我的色彩</view>
+</cu-custom>

@@ -12,13 +12,13 @@
   <view>
     <view class="flex">
       <view class="padding text-blue text-bold">名称</view>
-      <input placeholder="请输入数据名称" class="margin-sm" bindinput="getname"></input>
-      <text class="text-black cuIcon-roundclosefill padding "></text>
+      <input placeholder="请输入数据名称" class="margin-sm" value="{{name}}" bindinput="getname"></input>
+      <text class="text-black cuIcon-roundclosefill padding " bindtap="clear1"></text>
     </view>
     <view class="flex">
       <view class="padding text-blue text-bold">时间</view>
-      <input placeholder="全部时间" class="margin-sm" bindinput="gettime"></input>
-      <text class="text-black cuIcon-roundclosefill padding "></text>
+      <input placeholder="全部时间" class="margin-sm" value="{{time}}" bindinput="gettime"></input>
+      <text class="text-black cuIcon-roundclosefill padding " bindtap="clear2"></text>
     </view>
   </view>
   <image src="/images/find.png" class="find" bindtap="search"></image>
@@ -46,7 +46,7 @@
   <view class="flex bg-white margins">
     <view class="flex-sub bg-white  text-center height2 ">{{index}}</view>
     <!-- <view class="flex-sub bg-white text-center height2">{{item.score}}</view> -->
-    <image style="background-color:purple; height:60rpx;width:60rpx;border-radius:50%; top:10rpx;" class="" ></image>
+    <image style="background-color:{{item.colornum}}; height:60rpx;width:60rpx;border-radius:50%; top:10rpx;" class="" ></image>
     <view class="flex-sub bg-white text-center height2">{{item.name}}</view>
     <view class="flex-sub bg-white text-center height2 ">{{item.date}}</view>
     <view class="flex-sub bg-white text-blue text-center height2 ">详情</view>

@@ -107,7 +107,7 @@
 		<view class="flex-sub bg-white text-center height2">{{fn.fix3(item.first-colorlist[index].first)}}</view>
 		<view class="flex-sub bg-white text-center height2">{{fn.fix3(item.second-colorlist[index].second)}}</view>
 		<view class="flex-sub bg-white text-center height2 ">{{fn.fix3(item.third-colorlist[index].third)}}</view>
-		<view class="flex-sub bg-white text-center height2 ">{{fn.sqrt(item.first)}}</view>
+		<view class="flex-sub bg-white text-center height2 ">{{fn.sqrt((item.first-colorlist[index].first)*(item.first-colorlist[index].first)+(item.second-colorlist[index].second)*(item.second-colorlist[index].second)+(item.third-colorlist[index].third)*(item.third-colorlist[index].third))}}</view>
 	</view>
 </view>
 <view class="cu-bar bg-white solid-bottom padding-top">

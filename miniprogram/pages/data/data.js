@@ -17,6 +17,11 @@ Page({
       num: e.detail.value
     })
   },
+  clear(){
+    this.setData({
+      num: ''
+    })
+  },
   tabSelect(e) {
     this.setData({
       TabCur: e.currentTarget.dataset.id,
@@ -43,7 +48,7 @@ Page({
   },
   search() {
     var that = this
-    if (this.data.colornum) {
+    if (this.data.num) {
       wx.showLoading({
         title: '加载中...',
         mask: true //显示触摸蒙层  防止事件穿透触发

@@ -29,8 +29,8 @@
 <view class="flex">
   <view class="cu-form-group  width">
     <view class="title">内部色号:</view>
-    <input placeholder="请输入色号" bindinput="getcolor"></input>
-    <text class='cuIcon-roundclosefill text-blue '></text>
+    <input placeholder="请输入色号" bindinput="getcolor" value="{{num}}"></input>
+    <text class='cuIcon-roundclosefill text-blue ' bindtap="clear"></text>
   </view>
   <view class="cu-form-group  width">
     <view class="title">汽车车型：</view>

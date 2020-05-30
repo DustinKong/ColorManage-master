@@ -7,7 +7,7 @@ Page({
     scrollLeft: 0,
     num: '',
     list: ['官方配方', '个人配方'],
-    picker: ['asd', 'qw', 'class'],
+    picker: ['SAA', 'QWW', 'CLA'],
     picker2: ['宝马', '奔驰', '奥迪'],
     picker3: ['轿车', 'suv', 'mpv'],
     foundcolor: []

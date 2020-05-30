@@ -90,6 +90,7 @@ Page({
               wx.getUserInfo({
                 success: res => {
                   console.log('info')
+                  wx.setStorageSync('userInfo', res.userInfo)
                   this.setData({
                     avatarUrl: res.userInfo.avatarUrl,
                     userInfo: res.userInfo

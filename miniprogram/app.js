@@ -36,8 +36,8 @@ App({
           console.log('good')
         } else {
           // 未授权，跳转到授权页面
-          console.log('no')
-          wx.navigateTo({
+          console.log('no auth')
+          wx.redirectTo({
             url: '/pages/login/login',
           })
         }

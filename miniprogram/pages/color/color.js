@@ -3,6 +3,7 @@ const app = getApp();
 const list = db.collection('colorlist');
 Page({
   data: {
+    flag:false,
     name: '',
     colorpart1: [],
     colorlist: [{
@@ -84,7 +85,7 @@ Page({
       entity.color = that.data.colorlist
       entity.name = that.data.name
       entity.time = nowtime
-      entity.colornum=this.getRandomColor()
+      entity.colornum = this.getRandomColor()
       wx.cloud.callFunction({
         name: 'uploadmycolor',
         data: {
@@ -118,7 +119,7 @@ Page({
           name: that.data.name,
           color: that.data.colorlist,
           date: nowtime,
-          colornum:this.getRandomColor()
+          colornum: this.getRandomColor()
         },
         success: function (res) {
           console.log(res)
@@ -209,20 +210,21 @@ Page({
     })
 
     var that = this
-    console.log('chooseid', app.globalData.chooseid)
+    console.log('chooseidindex', app.globalData.chooseid)
     list.doc(app.globalData.chooseid).get({
       success: function (res) {
         console.log(res)
         that.setData({
-          colorpart1: res.data
+          colorpart1: res.data,
+          flag:true
         })
       }
     })
-    var t1=this.getRandomColor()
-    var t2=this.getRandomColor()
+    var t1 = this.getRandomColor()
+    var t2 = this.getRandomColor()
     this.setData({
-      bk1:t1,
-      bk2:t2
+      bk1: t1,
+      bk2: t2
     })
   },
 
@@ -237,7 +239,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad()
   },
 
   /**

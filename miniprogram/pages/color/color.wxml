@@ -94,7 +94,7 @@
 	module.exports = {
 		sqrt: function(num) {
 			return Math.sqrt(num).toFixed(2);
-		}
+		},
 		fix3: function(num) {
 			return num.toFixed(2);
 		}

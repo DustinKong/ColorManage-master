@@ -1,114 +1,119 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"enhance": false,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": false,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useCompilerModule": true,
-		"userConfirmedUseCompilerModuleSwitch": false
-	},
-	"appid": "wx1970e037074ebaee",
-	"projectname": "ColorManage",
-	"libVersion": "2.8.2",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"compileType": "miniprogram",
-	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": [
-				{
-					"id": -1,
-					"name": "me",
-					"pathName": "pages/me/me",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/login/login",
-					"pathName": "pages/login/login",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/gotopage/gotopage",
-					"pathName": "pages/gotopage/gotopage",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "首页",
-					"pathName": "pages/first/first",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "mycolor",
-					"pathName": "pages/mycolor/mycolor",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "find",
-					"pathName": "pages/find/find",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "data",
-					"pathName": "pages/data/data",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/equip/equip",
-					"pathName": "pages/equip/equip",
-					"scene": null
-				}
-			]
-		}
-	}
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "useMultiFrameRuntime": false,
+    "useApiHook": true
+  },
+  "appid": "wx1970e037074ebaee",
+  "projectname": "ColorManage",
+  "libVersion": "2.8.2",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "compileType": "miniprogram",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": [
+        {
+          "id": -1,
+          "name": "me",
+          "pathName": "pages/me/me",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/gotopage/gotopage",
+          "pathName": "pages/gotopage/gotopage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "首页",
+          "pathName": "pages/first/first",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "mycolor",
+          "pathName": "pages/mycolor/mycolor",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "find",
+          "pathName": "pages/find/find",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "data",
+          "pathName": "pages/data/data",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/equip/equip",
+          "pathName": "pages/equip/equip",
+          "scene": null
+        }
+      ]
+    }
+  }
 }
